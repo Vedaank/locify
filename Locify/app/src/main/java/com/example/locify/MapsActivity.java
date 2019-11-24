@@ -28,11 +28,15 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
+        OnMarkerClickListener {
 
     private GoogleMap mMap;
     private FusedLocationProviderClient fusedLocationProviderClient;
@@ -92,7 +96,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         getLocationPermission();
         updateLocationUI();
         //getDeviceLocation();
-
+        mMap.setOnMarkerClickListener(this);
     }
 
     private void getLocationPermission() {
@@ -253,5 +257,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions2.position(memorialLatLng);
         markerOptions2.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
         mMap.addMarker(markerOptions2);
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        //AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        //ViewGroup viewGroup = findViewById(android.R.id.content);
+        //View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.customview, viewGroup, false);
+        //builder.setView(dialogView);
+        //AlertDialog alertDialog = builder.create();
+        //alertDialog.show();
+        openDialog();
+        return true;
+    }
+
+    public void openDialog() {
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
 }
