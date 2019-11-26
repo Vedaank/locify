@@ -1,8 +1,10 @@
-package com.example.spotify;
+package com.example.locify;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.locify.R;
 
 public class PlaylistActivity extends AppCompatActivity {
 

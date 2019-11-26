@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -44,6 +45,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private final LatLng defaultLocation = new LatLng(-33.8523341, 151.2106085);
     private static final int REQUEST_CODE = 101;
     boolean locationPermissionGranted;
+    public static Context appContext;
 
     double currLatitude = -34;
     double currLongitude = 151;
@@ -52,6 +54,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        appContext = getApplicationContext();
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -89,13 +93,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.getUiSettings().setZoomGesturesEnabled(true);
         mMap.getUiSettings().setCompassEnabled(true);
 
-        LatLng USA = new LatLng(37.0902, -95.7129);
+        //LatLng USA = new LatLng(37.0902, -95.7129);
         //mMap.addMarker(new MarkerOptions().position(USA).title("USA"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(USA, 3));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(USA, 3));
 
         getLocationPermission();
         updateLocationUI();
-        //getDeviceLocation();
+        getDeviceLocation();
         mMap.setOnMarkerClickListener(this);
     }
 
@@ -148,7 +152,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             lastLocation = (Location) task.getResult();
                             LatLng latLng = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
 
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12));
 
                             //set marker
                             MarkerOptions markerOptions = new MarkerOptions();
@@ -275,4 +279,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         ExampleDialog exampleDialog = new ExampleDialog();
         exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
+
+    public static Context getAppContext() {return appContext;}
 }

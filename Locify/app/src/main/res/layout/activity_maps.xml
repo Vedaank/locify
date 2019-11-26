@@ -74,5 +74,5 @@
             android:src="@drawable/add_song" />
 
     </LinearLayout>
-    
+
 </LinearLayout>
