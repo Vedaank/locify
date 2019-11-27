@@ -5,7 +5,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -13,10 +15,13 @@ import android.location.Location;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.view.ViewGroup;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -261,6 +266,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions2.position(memorialLatLng);
         markerOptions2.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
         mMap.addMarker(markerOptions2);
+
+        //fake pin 3
+        LatLng fakeLatLng = new LatLng(37.4433, -122.0975);
+        MarkerOptions markerOptions3 = new MarkerOptions();
+        markerOptions3.position(fakeLatLng);
+        markerOptions3.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+        mMap.addMarker(markerOptions3);
     }
 
     @Override
@@ -275,9 +287,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return true;
     }
 
-    public void openDialog() {
-        ExampleDialog exampleDialog = new ExampleDialog();
-        exampleDialog.show(getSupportFragmentManager(), "example dialog");
+    private void openDialog(){
+        final Dialog dialog = new Dialog(this,R.style.DialogTheme);
+        View view = View.inflate(this,R.layout.bottomdialog_layout,null);
+        dialog.setContentView(view);
+
+        Window window = dialog.getWindow();
+        window.setGravity(Gravity.BOTTOM);
+        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        dialog.show();
+
+    }
+
+    public void onBottomDialogClick(View view){
+        Intent intent = new Intent(this, PlaylistActivity.class);
+        startActivity(intent);
     }
 
     public static Context getAppContext() {return appContext;}
