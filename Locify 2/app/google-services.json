@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "769515183226",
+    "firebase_url": "https://locify-ab734.firebaseio.com",
+    "project_id": "locify-ab734",
+    "storage_bucket": "locify-ab734.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769515183226:android:333761c41d1f1393252fc3",
+        "android_client_info": {
+          "package_name": "com.example.locify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769515183226-rqtnmtcb8ope5b53vf2tjmltbmd6uffg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.locify",
+            "certificate_hash": "9e4159568d94d8e9039af25bf73bdeb8964ef578"
+          }
+        },
+        {
+          "client_id": "769515183226-2223jdnvq36enb5ca8al8mg9nd1g38er.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAic-hMfLYfgxNHtuGZEE5x5Iuxh48MULE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769515183226-2223jdnvq36enb5ca8al8mg9nd1g38er.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769515183226:android:b23b240085d2fb7a252fc3",
+        "android_client_info": {
+          "package_name": "locify.v1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769515183226-2223jdnvq36enb5ca8al8mg9nd1g38er.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAic-hMfLYfgxNHtuGZEE5x5Iuxh48MULE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769515183226-2223jdnvq36enb5ca8al8mg9nd1g38er.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

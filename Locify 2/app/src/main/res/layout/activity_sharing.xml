@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SharingActivity"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Want to share a playlist?"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="168dp" />
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="10dp"
+        android:text="Fill out the information below"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="168dp" />
+
+    <TextView
+        android:id="@+id/place_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subtitle"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="40dp"
+        android:text="Location"
+        android:textSize="28dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="168dp" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/place_text">
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:text="  Lat:              Lng:     "
+            android:textSize="14dp"
+            android:background="@drawable/textbox"
+            android:ems="10">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:text=" Find Location " />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/playlist_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="40dp"
+        android:text="Playlist Name"
+        android:textSize="28dp"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="168dp" />
+
+    <EditText
+        android:id="@+id/name_playlist"
+        android:layout_width="313dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/playlist_name_text"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/textbox"
+        android:ems="10"
+        android:hint="Type a name"
+        android:inputType="textPersonName"
+
+        android:paddingLeft="10dp" />
+    <TextView
+        android:id="@+id/playlist_link_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_playlist"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="40dp"
+        android:text="Playlist Link"
+        android:textSize="28dp"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="168dp" />
+
+    <EditText
+        android:id="@+id/link_playlist"
+        android:layout_width="313dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/playlist_link_text"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/textbox"
+        android:ems="10"
+        android:hint="Insert a link"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="110dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/link_playlist"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/addbutton"
+        android:text="Add"
+        android:textColor="@color/white"
+        android:textSize="24dp" />
+
+
+    <ImageView
+        android:id="@+id/pin"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/subtitle"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/pin" />
+
+    <ImageView
+        android:id="@+id/music_note"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/linear"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="32dp"
+        app:srcCompat="@drawable/musicnote" />
+</RelativeLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    tools:context=".SharingActivity"-->
+    <!--    android:orientation="vertical">-->
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView1"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Select a place" />-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal">-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/placeName"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="......" />-->
+    <!--        <Button-->
+    <!--            android:id="@+id/select"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="select" />-->
+
+    <!--    </LinearLayout>-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView3"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Name of Playlist" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/name_playlist"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:ems="10"-->
+    <!--        android:inputType="textPersonName"-->
+    <!--        android:hint=" Please enter ..."/>-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView4"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="YouTube Link" />-->
+
+
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/link_playlist"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:ems="10"-->
+    <!--        android:inputType="textPersonName"-->
+    <!--        android:hint=" Please enter ..."/>-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/add"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Add" />-->
+
+
+
+    <!--</LinearLayout>-->
