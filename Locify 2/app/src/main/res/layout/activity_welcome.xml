@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="Discover New Music"
+        android:text="Discover New Music \n Around the World"
         android:textColor="#575151"
         android:textSize="25sp" />
 
